@@ -1,0 +1,8 @@
+{
+  "name": "Wellbot",
+  "description": "Wellbot.",
+  "image": "heroku/python",
+  "repository": "https://github.com/SvyatoslavPikh/wellbot-heroku",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ]
+}
