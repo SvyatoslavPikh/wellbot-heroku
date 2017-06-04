@@ -9,5 +9,5 @@ from user_menu import views
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^user_menu/', views.index, name="user_menu"),
+    url(r'^user_menu/', include('user_menu.urls'), name="user_menu"),
 ]

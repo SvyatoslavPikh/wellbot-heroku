@@ -79,10 +79,15 @@ WSGI_APPLICATION = 'wellbot.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+# postgres://odeodqwnapjxak:14cb956b42536d398664335bef567037f924eb3ce8e28c3daa0a84bab4ecf121@ec2-50-19-83-146.compute-1.amazonaws.com:5432/d6oh3muimem966
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd6oh3muimem966',
+        'USER': 'odeodqwnapjxak',
+        'PASSWORD': '14cb956b42536d398664335bef567037f924eb3ce8e28c3daa0a84bab4ecf121',
+        'HOST': 'ec2-50-19-83-146.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -140,3 +145,8 @@ STATICFILES_DIRS = (
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+try:
+    from .local_settings import *
+except:
+    pass
