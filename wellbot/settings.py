@@ -146,6 +146,8 @@ STATICFILES_DIRS = (
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+DATETIME_FORMAT = '%H:%M:%S %d.%m.%Y'
+
 try:
     from .local_settings import *
 except:
